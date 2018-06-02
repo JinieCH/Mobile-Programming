@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(name!=null && num!=null) {
+                if(!name.getText().toString().equals("") || !num.getText().toString().equals("")) {
                     helper = new MySQLiteOpenHelper(MainActivity.this, "person.db", null, 1);
                     insert(name.getText().toString(), num.getText().toString());
                     try {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(name!=null){
+                if(!name.getText().toString().equals("")){
                     delete(name.getText().toString());
                 }
                 else{
